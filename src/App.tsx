@@ -35,10 +35,6 @@ function App() {
         <button onClick={() => handleTabClick("exercise4")}>Exercise4</button>
       </div>
       {renderComponent()}
-      {/* <Exercise1/> */}
-      {/* <Exercise2/> */}
-      {/* <Exercise3/> */}
-      {/* <Exercise4 /> */}
     </div>
   );
 }

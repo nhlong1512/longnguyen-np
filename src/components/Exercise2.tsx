@@ -2,12 +2,12 @@ import React from "react";
 
 const Exercise2 = () => {
   const arrayAnimal: string[] = [
-    "dog",
-    "cat",
-    "chicken",
-    "cow",
-    "sheep",
-    "horse",
+    "🐶 dog",
+    "🐱 cat",
+    "🐔 chicken",
+    "🐮 cow",
+    "🐑 sheep",
+    "🐴 horse",
   ];
   return (
     <div
