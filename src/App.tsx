@@ -9,7 +9,7 @@ import Exercise6 from "./components/Exercise6";
 import Exercise7 from "./components/Exercise7";
 
 function App() {
-  const [activeTab, setActiveTab] = useState<string>("");
+  const [activeTab, setActiveTab] = useState<string>("Exercise1");
   const [tabList, setTabLsit] = useState<string[]>([
     "Exercise1",
     "Exercise2",
