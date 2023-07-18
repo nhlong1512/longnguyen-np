@@ -57,6 +57,7 @@ function App() {
               borderRadius: "5px",
               border: "1px solid #ccc",
               margin: "10px",
+              cursor: "pointer",
               backgroundColor: activeTab === tab ? "#f0153b" : "#fff",
               color:activeTab === tab ? "#fff" : '#000',
             }}
