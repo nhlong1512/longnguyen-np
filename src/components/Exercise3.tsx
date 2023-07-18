@@ -32,7 +32,7 @@ const Exercise3 = () => {
         }}
       >
         {arrayCheckbox.map((checkbox) => (
-          <div>
+          <div style={{display:'flex', justifyContent:'start'}}>
             <input
               value={checkbox}
               key={checkbox}

@@ -30,7 +30,7 @@ const Exercise2 = () => {
           {arrayAnimal.map((animal) => (
             <div
               key={animal}
-              style={{ border: "1px solid #ccc", padding: "20px 40px" }}
+              style={{ border: "1px solid #ccc", padding: "20px 40px", display:'flex', justifyContent:'start' }}
             >
               {animal}
             </div>

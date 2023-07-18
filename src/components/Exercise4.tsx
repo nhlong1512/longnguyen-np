@@ -17,7 +17,7 @@ const Exercise4 = () => {
       }}
     >
       <p>Button has been clicked: {count} times</p>
-      <button onClick={handleButtonClick}>Click me</button>
+      <button onClick={handleButtonClick}>Click Me</button>
     </div>
   );
 };
