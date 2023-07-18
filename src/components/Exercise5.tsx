@@ -8,6 +8,21 @@ const Exercise5 = () => {
     const fullName = `${firstName} ${lastName}`;
     setFullName(fullName);
   };
+  const isInvalidFirstName = () => {
+    const fn = firstName;
+    return fn.trim() === "";
+  };
+  const isInvalidLastName = () => {
+    const ln = lastName;
+    return ln.trim() === "";
+  };
+  const textResult = () => {
+    if (isInvalidFirstName() && isInvalidLastName())
+      return "Please enter first name and last name...";
+    if (isInvalidFirstName()) return "Please enter first name...";
+    if (isInvalidLastName()) return "Please enter last name...";
+    return `Your full name is ${fullName}`;
+  };
   return (
     <div
       style={{
@@ -23,9 +38,16 @@ const Exercise5 = () => {
           type="text"
           id="firstName"
           value={firstName}
-          placeholder = "First Name"
+          placeholder="First Name"
           onChange={(e) => setFirstName(e.target.value)}
-          style={{fontSize:'16px', padding:'10px', borderRadius:'5px', border: '1px solid #ccc', marginBottom:'10px', width:'260px'}}
+          style={{
+            fontSize: "16px",
+            padding: "10px",
+            borderRadius: "5px",
+            border: "1px solid #ccc",
+            marginBottom: "10px",
+            width: "260px",
+          }}
         />
       </div>
       <div>
@@ -35,11 +57,36 @@ const Exercise5 = () => {
           value={lastName}
           placeholder="Last Name"
           onChange={(e) => setLastName(e.target.value)}
-          style={{fontSize:'16px', padding:'10px', borderRadius:'5px', border: '1px solid #ccc', marginBottom:'10px', width:'260px'}}
+          style={{
+            fontSize: "16px",
+            padding: "10px",
+            borderRadius: "5px",
+            border: "1px solid #ccc",
+            marginBottom: "10px",
+            width: "260px",
+          }}
         />
       </div>
-      <button onClick={handleButtonClick} style ={{border:'none', fontSize:'20px', color:'#fff', backgroundColor:'#f0153b', padding:'10px 50px', fontWeight:'700', width:'280px', borderRadius:'10px', borderBottom:'5px solid #a30d36'}}>GREET ME</button>
-      {fullName && <p style={{fontSize:'20px', fontWeight:'700'}}>Full Name is: {fullName}!</p>}
+      <button
+        onClick={handleButtonClick}
+        style={{
+          border: "none",
+          fontSize: "20px",
+          color: "#fff",
+          backgroundColor: "#f0153b",
+          padding: "10px 50px",
+          fontWeight: "700",
+          width: "280px",
+          borderRadius: "10px",
+          borderBottom: "5px solid #a30d36",
+          cursor: "pointer",
+        }}
+      >
+        GREET ME
+      </button>
+      {fullName && (
+        <p style={{ fontSize: "20px", fontWeight: "700" }}>{textResult()}</p>
+      )}
     </div>
   );
 };

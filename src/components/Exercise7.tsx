@@ -13,7 +13,7 @@ const Exercise7 = () => {
   const [search, setSearch] = useState<string>("");
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value);
+    setSearch(event.target.value.trim());
   };
 
   const filterFruits = fruitList.filter((fruit) =>
