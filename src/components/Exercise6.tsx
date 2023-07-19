@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Card } from "../models/ICard";
+import { ICard } from "../models/ICard";
 
 const Exercise6 = () => {
-  const [listCard, setListCard] = useState<Card[]>([
+  const [listCard, setListCard] = useState<ICard[]>([
     {
       id: "1",
       setup: `What's the best thing about a Boolean?`,

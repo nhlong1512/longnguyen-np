@@ -4,9 +4,12 @@ const Exercise5 = () => {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [fullName, setFullName] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
   const handleButtonClick = () => {
     const fullName = `${firstName} ${lastName}`;
     setFullName(fullName);
+    setMessage(textResult(fullName));
   };
   const isInvalidFirstName = () => {
     const fn = firstName;
@@ -16,7 +19,7 @@ const Exercise5 = () => {
     const ln = lastName;
     return ln.trim() === "";
   };
-  const textResult = () => {
+  const textResult = (fullName:string) => {
     if (isInvalidFirstName() && isInvalidLastName())
       return "Please enter first name and last name...";
     if (isInvalidFirstName()) return "Please enter first name...";
@@ -85,7 +88,7 @@ const Exercise5 = () => {
         GREET ME
       </button>
       {fullName && (
-        <p style={{ fontSize: "20px", fontWeight: "700" }}>{textResult()}</p>
+        <p style={{ fontSize: "20px", fontWeight: "700" }}>{message}</p>
       )}
     </div>
   );

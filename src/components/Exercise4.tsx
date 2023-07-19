@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React, { useState } from "react";
 
 const Exercise4 = () => {
@@ -17,7 +18,14 @@ const Exercise4 = () => {
       }}
     >
       <p>Button has been clicked: {count} times</p>
-      <button onClick={handleButtonClick}>Click Me</button>
+      <Button
+        type="submit"
+        variant="contained"
+        style={{ backgroundColor: "#f0153b" }}
+        onClick={handleButtonClick}
+      >
+        Click Me
+      </Button>
     </div>
   );
 };

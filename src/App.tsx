@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Exercise1 from "./components/Exercise1";
@@ -9,6 +9,7 @@ import Exercise5 from "./components/Exercise5";
 import Exercise6 from "./components/Exercise6";
 import Exercise7 from "./components/Exercise7";
 import Exercise8 from "./components/Exercise8";
+import Exercise9 from "./components/Exercise9";
 
 function App() {
   const [activeTab, setActiveTab] = useState<string>("exercise1");
@@ -21,7 +22,9 @@ function App() {
     "exercise6",
     "exercise7",
     "exercise8",
+    "exercise9",
   ]);
+
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
@@ -68,6 +71,7 @@ function App() {
         <Route path="/exercise6" element={<Exercise6 />} />
         <Route path="/exercise7" element={<Exercise7 />} />
         <Route path="/exercise8" element={<Exercise8 />} />
+        <Route path="/exercise9" element={<Exercise9 />} />
       </Routes>
     </div>
   );
