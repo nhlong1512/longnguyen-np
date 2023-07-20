@@ -42,7 +42,7 @@ const Exercise8 = () => {
   }, [index, isPaused]);
 
   const goToSlide = (slideIndex: number) => {
-    
+    setIndex(slideIndex);
   }
 
   return (
@@ -109,13 +109,14 @@ const Exercise8 = () => {
           </div>
           <div style ={{display: 'flex', gap:'20px', justifyContent: 'center'}}>
             {slides.map((slide, slideIndex) => (
-              <button
+              <div
                 key={slideIndex}
-                className={slideIndex === index ? "active" : undefined}
-                // onClick={goToSlide(slideIndex)}
+                className={slideIndex=== index ? "activeSlide": "unactiveSlide"}
+                onClick={() => goToSlide(slideIndex)}
+                style ={{borderRadius: '4px', border: '3px solid #fff', cursor: 'pointer'}}
               >
-                {slideIndex + 1}
-              </button>
+                <img src={slide.url} alt="imgSlide" style={{width: '72px', height:'100%'}} />
+              </div>
             ))}
           </div>
         </div>
