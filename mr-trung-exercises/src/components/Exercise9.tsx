@@ -2,6 +2,7 @@ import { CircularProgress, Grid } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { IUser } from "../models/IUser";
+import { API_FETCH } from "../config";
 
 const Exercise9 = () => {
   const [users, setUsers] = useState<IUser[]>([]);
@@ -11,9 +12,7 @@ const Exercise9 = () => {
   const fetchData = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get(
-        "https://random-data-api.com/api/users/random_user?size=10"
-      );
+      const response = await axios.get(API_FETCH);
       console.log(response.data);
       setUsers(response.data);
     } catch (error) {

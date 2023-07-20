@@ -35,11 +35,15 @@ const Exercise8 = () => {
       if (!isPaused) {
         setIndex(index + 1);
       }
-    }, 5000);
+    }, 3000);
     return () => {
       clearInterval(slider);
     };
   }, [index, isPaused]);
+
+  const goToSlide = (slideIndex: number) => {
+    
+  }
 
   return (
     <div
@@ -70,34 +74,50 @@ const Exercise8 = () => {
             position = "lastSlide";
           }
           return (
-            <article
-              className={position}
-              key={id}
-              onClick={() => setIsPaused(!isPaused)}
-            >
-              <img src={url} alt="img" className="slide-img" />
-            </article>
+            <div>
+              <article
+                className={position}
+                key={id}
+                onClick={() => setIsPaused(!isPaused)}
+              >
+                <img src={url} alt="img" className="slide-img" />
+              </article>
+            </div>
           );
         })}
-        <div style={{ display: "flex", gap: "660px" }}>
-          <Button
-            type="submit"
-            variant="contained"
-            fullWidth
-            onClick={() => setIndex(index - 1)}
-            style={{ backgroundColor: "#f0153b" }}
-          >
-            <MdKeyboardArrowLeft style={{ fontSize: "36px" }} />
-          </Button>
-          <Button
-            type="submit"
-            variant="contained"
-            style={{ backgroundColor: "#f0153b" }}
-            fullWidth
-            onClick={() => setIndex(index + 1)}
-          >
-            <MdKeyboardArrowRight style={{ fontSize: "36px" }} />
-          </Button>
+        <div style={{position:'relative', height:'540px', display: 'flex', flexDirection: 'column', justifyContent:'space-between'}}>
+          <div></div>
+          <div style={{ display: "flex", gap: "660px" }}>
+            <Button
+              type="submit"
+              variant="contained"
+              fullWidth
+              onClick={() => setIndex(index - 1)}
+              style={{ backgroundColor: "#f0153b" }}
+            >
+              <MdKeyboardArrowLeft style={{ fontSize: "36px" }} />
+            </Button>
+            <Button
+              type="submit"
+              variant="contained"
+              style={{ backgroundColor: "#f0153b" }}
+              fullWidth
+              onClick={() => setIndex(index + 1)}
+            >
+              <MdKeyboardArrowRight style={{ fontSize: "36px" }} />
+            </Button>
+          </div>
+          <div style ={{display: 'flex', gap:'20px', justifyContent: 'center'}}>
+            {slides.map((slide, slideIndex) => (
+              <button
+                key={slideIndex}
+                className={slideIndex === index ? "active" : undefined}
+                // onClick={goToSlide(slideIndex)}
+              >
+                {slideIndex + 1}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>

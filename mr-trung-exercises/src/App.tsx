@@ -25,10 +25,10 @@ function App() {
     "exercise9",
   ]);
 
-
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
   };
+  
   return (
     <div className="App" style={{ position: "relative" }}>
       <div
@@ -37,6 +37,7 @@ function App() {
           top: "20px",
           left: "50%",
           transform: "translateX(-50%)",
+          width: '100%'
         }}
       >
         {tabList.map((tab) => (
