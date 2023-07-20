@@ -85,8 +85,8 @@ const Exercise9 = () => {
               {users.map((user) => (
                 <Grid
                   item
-                  xs={6}
-                  sm={6}
+                  xs={5}
+                  sm={5}
                   display="flex"
                   justifyContent="center"
                   alignItems="center"
